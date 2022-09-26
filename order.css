@@ -1,0 +1,112 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Red Hat Display', sans-serif;
+  min-height: 120vh;
+  background-image: url(images/pattern-background-desktop.svg);/*to put in images in the body  */
+  background-repeat: no-repeat;/*when i first put it it was repeating  */
+  background-size: contain;/*to make the image fit */
+  background-color:  hsl(225, 100%, 94%);
+  position: relative;/*to position the contents,i tried this and it worked */
+}
+
+.container{
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(/* x axis*/-50%,/* y axis*/-50%);/*A new type of positioning i learnt at this time of googling*/
+  max-width: 450px;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;/*to make border raduis apply to all sides */
+}
+.text{
+  padding:/*padding all around */ 7%;/*to shift the entire div to the center of container div*/
+  text-align: center;
+}
+.text p.subtitle{
+  color: hsl(224, 23%, 55%);
+  margin-bottom: 25px;/*give the bottom of the paragraph a bit of space*/
+}
+.title{
+  color: hsl(223, 47%, 23%);
+  margin-bottom: 20px;/*give the bottom of the title a bit of space*/
+}
+.plan{
+  background-color: hsl(225, 100%, 98%);
+  border-radius: 12px;
+  display: flex;
+  padding:/*padding all around */25px;/*to give it space from the anchor"change"*/
+  align-items: center;
+  justify-content: space-between;
+}
+.plan a{
+  font-weight: 900;
+  color: hsl(245, 75%, 52%);
+  transition: color .3s ease;
+}
+.plan a:hover{
+  text-decoration: none;
+  color:  hsl(224, 23%, 55%);
+}
+.plan-left{
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+.plan-left div{
+  margin-left: 20px;/*to give it space from the icon*/
+}
+.plan-left p{
+  color: hsl(224, 23%, 55%);
+}
+a.pr-btn{
+  display: block;
+  text-decoration: none;
+  color: hsl(225, 100%, 98%);
+  background-color: hsl(245, 75%, 52%);
+  padding: 20px/*up an down*/ 0/*left and right*/;
+  border-radius: 12px;
+  margin:  30px/*up an down*/ 0/*left and right*/;
+  transition: background-color .3s ease;
+}
+a.pr-btn:hover{
+  background-color:  hsl(224, 23%, 55%);
+}
+a.ca-btn{
+  color:  hsl(224, 23%, 55%);
+  text-decoration: none;
+  font-weight: 900;
+  transition: color .3s ease;
+}
+a.ca-btn:hover{
+  color: hsl(223, 47%, 23%);
+}
+@media only screen and (max-width:425px){
+  body{
+    background-image: url(images/pattern-background-mobile.svg);/*to put in images in the body  */
+    font-size: 14px;
+  }
+  .container{
+    max-width: 87%;
+  }
+  .title{
+    font-size: 22px;
+  }
+  div.plan{
+    padding: 12px;
+  }
+  .plan-left div{
+    margin-left:10px;
+  }
+  a.pr-btn,
+  a.ca-btn,
+  .plan a{
+    font-size: 13px;
+  }
+}
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
